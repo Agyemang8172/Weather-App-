@@ -1,13 +1,12 @@
 import React, { useState } from 'react'
 
-const WeatherInput = ({onSearch}) => {
-    const [inputCity,setInputCity] = useState('')
-
+const WeatherInput = () => {
+    const [city,setCity] = useState(null)
 
     const handleSubmit = (e)  => {
         e.preventDefault()
-        if ( inputCity.trim() !== "") {
-             onSearch(inputCity)
+        if ( city.trim() !== "") {
+            fetchWeather(city)
         }
     }
 
@@ -17,10 +16,11 @@ const WeatherInput = ({onSearch}) => {
       <input 
         type='text' 
         placeholder='Enter city name'
-        value={inputCity}
-        onChange={(e)=>setInputCity(e.target.value)}
+        value={city}
+        onChange={(e)=>setCity(e.target.value)}
 
-    />
+        
+      />
       <button type='submit'>
           Search
       </button>
