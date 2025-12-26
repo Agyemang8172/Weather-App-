@@ -8,13 +8,13 @@
     const [loading,setLoading] =  useState(false);
     const [weather,setWeather] = useState(null);
     const [error,setError]  = useState(null)
-  
+   console.log(import.meta.env)
+
 
     useEffect(()=> {
      const savedWeather = localStorage.getItem('lastCity')
-     if (savedWeather) setCity(savedWeather )
+     if (savedWeather) setCity(savedWeather)
     },[])
-
 
     useEffect(()=>  {
       const fetchWeather  =  async ()  => {

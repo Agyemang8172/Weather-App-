@@ -5,7 +5,7 @@ const WeatherInput = ({onSearch, city}) => {
 
     const handleSubmit = (e)  => {
          e.preventDefault()
-         if ( city.trim() !== "") {
+         if (city.trim() !== "") {
             onSearch(city)
             localStorage.setItem('lastCity',city)
         } 
